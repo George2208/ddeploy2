@@ -10,13 +10,38 @@ async function autologin(){
 	})
 	if(res.status==200){
         console.log("Logged in as "+req.user)
-        logbutton(true)
+        document.getElementById("loginout").innerHTML = "Log out"
+        try {
+            document.getElementById("registrationbutton").style.pointerEvents = "none"
+            document.querySelector("#registrationbutton p").innerHTML = req.user
+        } catch(err) {}
+        return
     }
-	else console.log("Not logged")
+    console.log("Not logged")
+    localStorage.removeItem("username")
+    localStorage.removeItem("password")
 }autologin()
 
-document.getElementById("loginform").addEventListener("submit", listen)
-async function listen(e){
+document.getElementById("loginbutton").addEventListener("click", function() {
+    if(localStorage.getItem("username") && localStorage.getItem("password")){
+        document.getElementById("loginout").innerHTML = "Log in"
+        try {
+            document.getElementById("registrationbutton").style.pointerEvents = "all"
+            document.querySelector("#registrationbutton p").innerHTML = "Registration"
+        } catch(err) {}
+        console.log("logout")
+        localStorage.removeItem("username")
+        localStorage.removeItem("password")
+    }
+    else{
+        document.getElementById("loginwindow").style.display = "block";
+        document.getElementById("loginwindow").classList.remove("run-animation");
+        void document.getElementById("loginwindow").offsetWidth;
+        document.getElementById("loginwindow").classList.add("run-animation");
+    }
+});
+
+document.getElementById("loginform").addEventListener("submit", async function(e){
     e.preventDefault()
     const obj = {
         user: document.getElementById("username").value,
@@ -30,8 +55,13 @@ async function listen(e){
     })
 	let ress = await res.json()
     if(res.status==200){
-        let audio = new Audio("audio_login.mp3");
-        audio.play();
+        document.getElementById("loginout").innerHTML = "Log out"
+        try {
+            document.getElementById("registrationbutton").style.pointerEvents = "none"
+            document.querySelector("#registrationbutton p").innerHTML = ress.user
+        } catch(err) {}
+        //let audio = new Audio("audio_login.mp3");
+        //audio.play();
         localStorage.setItem("username", ress.user);
         localStorage.setItem("password", ress.pass);
         document.getElementById("loginwindow").style.display = "none";
@@ -53,12 +83,5 @@ async function listen(e){
 		return
 	}
     alert(ress.res)
-}
+})
 
-async function logbutton(x){
-    if(!x)
-        return
-    document.querySelector("#loginout").textContent = "Log out"
-    document.getElementById("loginform").removeEventListener("submit", listen)
-    console.log(x)
-}

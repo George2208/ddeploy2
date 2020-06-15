@@ -3,11 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Delete account</title>
+	<title>Users</title>
 	<link rel="shortcut icon" href="../img/Fav_white.png">
 	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
-	<link rel="stylesheet" type="text/css" href="../css/registration.css">
-    <script defer src="../js/delete.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/users.css">
+    <script defer src="../js/users.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <body>
 	<nav>
@@ -18,27 +19,23 @@
 			<li class="dropdown">
 				<button><svg><use href="#svg_more"></use></svg>More</button>
 				<div class="dropdowncontent">
-					<a href="../html/users.html">Users</a>
+					<a href="#">Users</a>
 					<a href="../html/update.html">Update profile</a>
-					<a href="#">Delete profile</a>
+					<a href="../html/delete.html">Delete profile</a>
 				</div>
 			</li>
 			<li><button onclick="darkMode()"><svg><use href="#svg_darkmode"></use></svg>Dark-mode</button></li>
 		</ul>
 	</nav>
 	<main>
-		<form id="form">
-            <h1>Delete account</h1>
-            <label for="user">Username:</label>
-            <input type="text" id="user">
-    
-            <label for="mail">Email:</label>   
-            <input type="email" id="mail">
-    
-            <label for="pass">Password:</label>
-            <input type="password" id="pass">
-            <button id="loginButton" value="submit">Delete!</button>
-        </form>
+		<table id="table">
+			<tr>
+				<th>Username</th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Type</th>
+			</tr>
+		</table>
 	</main>
 	<svg style="display: none;">
 		<path class="svgs" viewBox="0 0 16 16" id="svg_home" d="M16 9.226l-8-6.21-8 6.21v-2.532l8-6.21 8 6.21zM14 9v6h-4v-4h-4v4h-4v-6l6-4.5z"/>

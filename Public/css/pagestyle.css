@@ -68,10 +68,10 @@ iframe, table {
 			width: 100%;}
 }
 
-
 #commdiv {
 	background-color: lightgrey;
 	display: flex;
+	padding-bottom: 30px;
 	flex-direction: column;}
 	#commdiv form {
 		width: 70%;
@@ -122,6 +122,19 @@ iframe, table {
 			#container .comment {
 				padding-left: 10%;
 				margin-top: 10px;;}
+
+#hidebtn {
+	outline: none;
+	width: auto;
+	font-size: 15px;
+	border-radius: 7px;
+	padding: 5px 15px;
+	border: 1px solid transparent;
+	transition-duration: 0.5s;
+	transition-property: all;}
+	#hidebtn:hover {
+		background-color: grey;
+		color: white;}
 
 .dark-mode #commdiv {
 	background-color: black;

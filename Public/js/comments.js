@@ -44,9 +44,11 @@ async function vote(commentUser, commentTime, type){
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(obj)
     })
-    res = await res.json()
-    console.log(res.res)
+    ress = await res.json()
+    console.log(ress.res)
     autorefreh()
+    if(res.status == 401)
+        alert(ress.res)
 }
 
 async function deleteComment(commentUser, commentTime){
@@ -142,9 +144,9 @@ function autorefreh(){
     }, refreshrate);
 }autorefreh()
 
-async function hidecomments(){
-    console.log("Comments disabled")
+document.getElementById("hidebtn").addEventListener("click", function(e){
+    e.preventDefault()
     clearInterval(timer)
-    document.getElementById("container").innerHTML = ""
-
-}
+    document.getElementById("commdiv").innerHTML = ""
+    console.log("Comments disabled")
+})

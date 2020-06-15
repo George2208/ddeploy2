@@ -8,13 +8,6 @@ function darkMode() {
 
 window.onload = function(){
 
-	document.getElementById("loginbutton").addEventListener("click", function() {
-		document.getElementById("loginwindow").style.display = "block";
-		document.getElementById("loginwindow").classList.remove("run-animation");
-		void document.getElementById("loginwindow").offsetWidth;
-		document.getElementById("loginwindow").classList.add("run-animation");
-	});
-
 	document.onclick = function(e){
 		if((e.target.closest("#loginwindow") == null && e.target.closest("#loginbutton") == null) || e.target.id == "closeloginwindow"){
 			document.getElementById("loginwindow").style.display = "none";
@@ -40,6 +33,6 @@ window.onload = function(){
 	}
 
 	if (typeof(Storage) !== "undefined" && localStorage.getItem("darkmode") == "true") {
-		document.body.classList.toggle("dark-mode");
+		document.body.classList.add("dark-mode");
 	}
 }

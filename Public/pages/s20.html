@@ -17,36 +17,36 @@
 		<button class="navmenu">Menu</button>
 		<ul>
 			<li><a href="../html/index.html"><svg><use href="#svg_home"></use></svg>Home</a></li>
-			<li><a href="#" onclick="hidecomments()"><svg><use href="#svg_contact"></use></svg>Contact</a></li>
+			<li><a href="#"><svg><use href="#svg_contact"></use></svg>Contact</a></li>
 			<li class="dropdown">
 				<button><svg><use href="#svg_more"></use></svg>More</button>
 				<div class="dropdowncontent">
-					<a href="#">Reviews</a>
-					<a href="#">News</a>
-					<a href="#">Topics</a>
+					<a href="../html/users.html">Users</a>
+					<a href="../html/update.html">Update profile</a>
+					<a href="../html/delete.html">Delete profile</a>
 				</div>
 			</li>
 			<li><button onclick="darkMode()"><svg><use href="#svg_darkmode"></use></svg>Dark-mode</button></li>
 		</ul>
 		<ul>
 			<li><button id="loginbutton"><svg><use href="#svg_login"></use></svg><p id="loginout">Login</p></button></li>
-			<li><a href="../html/registration.html"><svg><use href="#svg_register"></use></svg>Registration</a></li>
+			<li><a id="registrationbutton" href="../html/registration.html"><svg><use href="#svg_register"></use></svg><p>Registration</p></a></li>
 		</ul>
 	</nav>
 	<div id="loginwindow" class="runanim">
 		<h1>Login</h1>
 		<form id="loginform">
 			<label for="username">Your username:</label>
-			<input id="username" type="text" name="username" placeholder="Username" required>
+			<input id="username" type="text" placeholder="Username" required>
 			<label for="password">Your password:</label>
-			<input id="password" type="password" name="password" placeholder="Password" required>
+			<input id="password" type="password" placeholder="Password" required>
 		</form>
 		<div id="remembermediv">
-			<input id="rememberme" type="checkbox" name="rememberme">
+			<input id="rememberme" type="checkbox">
 			<label for="rememberme">Remember me</label>
 		</div>
 		<button id="closeloginwindow">Close</button>
-		<button id="submitbutton" type="submit" name="submitlogin" form="loginform" value="Submit">Submit</button>
+		<button id="submitbutton" type="submit" form="loginform" value="Submit">Submit</button>
 		<ul>
 			<li><a href="registration.html">Create new account</a></li>
 			<li><a href="#">Password recovery</a></li>
@@ -153,6 +153,7 @@
 				<button id="btn">Send</button>
 			</form>
 			<div id="container"></div>
+			<button id="hidebtn">Hide comments</button>
 		</div>
 		
 	<script>

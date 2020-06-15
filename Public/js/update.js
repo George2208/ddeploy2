@@ -8,7 +8,7 @@ function darkMode() {
 
 window.onload = function(){
 	if (typeof(Storage) !== "undefined" && localStorage.getItem("darkmode") == "true") {
-		document.body.classList.toggle("dark-mode");
+		document.body.classList.add("dark-mode");
 	}
 }
 

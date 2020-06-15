@@ -82,7 +82,7 @@ nav .dropdowncontent {
 			z-index: 2;
 			box-sizing: border-box;
 			border-top: 1px solid lightgrey;
-			padding: 0.5rem 30px;}
+			padding: 0.5rem 10px;}
 			nav .dropdowncontent > a:last-child {
 				border-radius: 0px 0px 15px 15px;
 				border-bottom: 1px solid lightgrey}
@@ -97,7 +97,7 @@ nav svg {
 	top: .125em;
 	position: relative;}
 
-#loginbutton > p{
+#loginbutton > p, #registrationbutton > p {
 	display: inline;}
 
 #loginwindow {
